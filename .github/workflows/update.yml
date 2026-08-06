@@ -42,14 +42,18 @@ jobs:
           PULSE_RUN_BUDGET: "600"
         run: python run.py
 
-      - name: Fail the run if any secret-shaped string reached the outputs
+      - name: Fail the run if any credential reached the outputs
+        # Matches credential *values*, not the words. The outputs legitimately contain
+        # the phrase "API keys" (this project advertises having none), so a bare
+        # keyword grep would fail every run - it has to look for an assigned secret.
         run: |
-          if grep -rIEn "(api[_-]?key|apikey|secret|bearer [A-Za-z0-9]|AKIA[0-9A-Z]{16})" \
-               data/latest.json docs/index.html REPORT.md ; then
-            echo "::error::A secret-shaped string appeared in a generated output."
+          PATTERN='([Aa][Pp][Ii][_-]?[Kk][Ee][Yy]|[Tt][Oo][Kk][Ee][Nn]|[Ss][Ee][Cc][Rr][Ee][Tt]|[Pp][Aa][Ss][Ss][Ww][Oo][Rr][Dd])["'\'']?[[:space:]]*[:=][[:space:]]*["'\'']?[A-Za-z0-9_\-]{16,}'
+          PREFIXES='(gh[pousr]_[A-Za-z0-9]{30,}|AKIA[0-9A-Z]{16}|sk-[A-Za-z0-9]{20,}|[Bb]earer[[:space:]]+[A-Za-z0-9._-]{20,})'
+          if grep -rIEn "$PATTERN|$PREFIXES" data/latest.json docs/index.html REPORT.md ; then
+            echo "::error::A credential-shaped value appeared in a generated output."
             exit 1
           fi
-          echo "Clean: no key-shaped strings in any generated output."
+          echo "Clean: no credential-shaped values in any generated output."
 
       - name: Commit refreshed data, report and dashboard
         run: |
