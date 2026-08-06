@@ -1,0 +1,37 @@
+{
+  "available": true,
+  "last_reviewed": "2026-08-06",
+  "why_curated": "Named protocol milestones have no machine-readable feed. The live SIMD pull-request queue and the Agave release feed in the same report are fully automated; this list is the human layer, and it carries a review date so staleness is visible rather than silent.",
+  "milestones": [
+    {
+      "name": "Alpenglow",
+      "status": "Approved (SIMD-0326), rollout in progress",
+      "summary": "Replaces TowerBFT and Proof-of-History-based consensus with Votor + Rotor, targeting sub-second (~150 ms) finality and moving voting off-chain to cut validator vote costs."
+    },
+    {
+      "name": "Firedancer",
+      "status": "Frankendancer in production; full client rolling out",
+      "summary": "Jump Crypto's independent validator client written in C. Client diversity is the point: a bug in one implementation should not stop the chain."
+    },
+    {
+      "name": "SIMD-0096 / priority fee routing",
+      "status": "Live",
+      "summary": "100% of priority fees go to the block producer rather than half being burned, changing validator economics and the shape of the fee market."
+    },
+    {
+      "name": "SIMD-0228 (market-based emissions)",
+      "status": "Proposed, did not reach supermajority",
+      "summary": "Would tie SOL issuance to the staking participation rate rather than a fixed disinflation curve. Watch the SIMD queue in this report for successor proposals."
+    },
+    {
+      "name": "Increased block limits",
+      "status": "Shipping incrementally",
+      "summary": "Successive raises to the per-block compute unit ceiling, lifting throughput headroom ahead of Alpenglow's consensus changes."
+    },
+    {
+      "name": "Token Extensions (Token-2022)",
+      "status": "Live and expanding",
+      "summary": "Confidential transfers, transfer hooks and permanent delegates - the feature set institutional and tokenised-asset issuers ask for."
+    }
+  ]
+}

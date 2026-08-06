@@ -1,0 +1,79 @@
+name: Update Solana Pulse
+
+# The whole automation story: run the same `python run.py` a human would run,
+# commit what changed, redeploy the dashboard. No secrets, no keys, no services.
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"   # every six hours - change this one line to change the cadence
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: solana-pulse
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Confirm there is nothing to install
+        run: |
+          echo "Third-party packages required: none"
+          python -c "import sys; print(sys.version)"
+          pip list --format=freeze | head -20
+
+      - name: Collect, analyse and render
+        env:
+          PULSE_RUN_BUDGET: "600"
+        run: python run.py
+
+      - name: Fail the run if any secret-shaped string reached the outputs
+        run: |
+          if grep -rIEn "(api[_-]?key|apikey|secret|bearer [A-Za-z0-9]|AKIA[0-9A-Z]{16})" \
+               data/latest.json docs/index.html REPORT.md ; then
+            echo "::error::A secret-shaped string appeared in a generated output."
+            exit 1
+          fi
+          echo "Clean: no key-shaped strings in any generated output."
+
+      - name: Commit refreshed data, report and dashboard
+        run: |
+          git config user.name  "solana-pulse-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data REPORT.md docs
+          if git diff --staged --quiet; then
+            echo "No change this run."
+          else
+            git commit -m "chore(data): refresh Solana pulse $(date -u +'%Y-%m-%dT%H:%MZ')"
+            git push
+          fi
+
+      - name: Upload the dashboard for Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy:
+    needs: collect
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
