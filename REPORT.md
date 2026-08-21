@@ -1,6 +1,6 @@
 # Solana Ecosystem Pulse
 
-**Generated:** 2026-08-20T18:20:02Z · **Schema:** `1.0.0` · **Collection time:** 16.1s · **Sources OK:** 35/35
+**Generated:** 2026-08-21T00:33:25Z · **Schema:** `1.0.0` · **Collection time:** 27.2s · **Sources OK:** 35/35
 
 > This file is regenerated end-to-end by `python run.py`. Nothing in it is hand-written; every number below carries its source in [Data sources](#data-sources).
 
@@ -10,54 +10,52 @@
 
 | Metric | Value | 24h |
 |---|---:|---:|
-| SOL price | $86.96 | +6.67% |
-| Market cap | $50.68B | rank #7 |
-| Total value locked | $5.30B | +8.23% |
+| SOL price | $88.31 | +3.22% |
+| Market cap | $51.51B | rank #7 |
+| Total value locked | $5.29B | +7.93% |
 | Stablecoin supply | $16.33B | +1.97% |
-| DEX volume (24h) | $3.01B | +63.74% |
-| Chain fees / REV (24h) | $13.68M | +55.88% |
-| Non-vote TPS (1h avg) | 3,389 | peak 5,980 total |
+| DEX volume (24h) | $3.15B | +4.68% |
+| Chain fees / REV (24h) | $13.76M | +0.59% |
+| Non-vote TPS (1h avg) | 2,670 | peak 5,107 total |
 | Active validators | 690 | 6 delinquent |
-| Epoch 1019 | 73.06% complete | 116,395 slots left |
+| Epoch 1019 | 85.54% complete | 62,470 slots left |
 
 ## Anomaly detection
 
-Serious anomalies detected. 17 rules evaluated across two engines (threshold + robust z-score over 60 historical runs, sigma = 3.0).
+Serious anomalies detected. 17 rules evaluated across two engines (threshold + robust z-score over 61 historical runs, sigma = 3.0).
 
-Critical 0 · Serious 3 · Warning 5 · Info 0
+Critical 0 · Serious 3 · Warning 3 · Info 0
 
 | Severity | Finding | Detail | Engine |
 |---|---|---|---|
-| [SERIOUS] | Solana TVL is above its recent norm | Current 5,300,056,423.00 sits 11.7 sigma above the median of the last 60 runs (4,821,663,765.50, +9.9%). | `zscore` |
-| [SERIOUS] | SOL price is above its recent norm | Current 86.96 sits 12.9 sigma above the median of the last 60 runs (75.79, +14.7%). | `zscore` |
-| [SERIOUS] | 24h DEX volume is above its recent norm | Current 3,009,837,694.95 sits 6.0 sigma above the median of the last 60 runs (1,564,209,011.56, +92.4%). | `zscore` |
+| [SERIOUS] | Solana TVL is above its recent norm | Current 5,285,370,682.00 sits 11.3 sigma above the median of the last 61 runs (4,821,987,992.00, +9.6%). | `zscore` |
+| [SERIOUS] | SOL price is above its recent norm | Current 88.31 sits 14.1 sigma above the median of the last 61 runs (75.80, +16.5%). | `zscore` |
+| [SERIOUS] | 24h DEX volume is above its recent norm | Current 3,150,837,936.95 sits 5.8 sigma above the median of the last 61 runs (1,581,973,855.56, +99.2%). | `zscore` |
 | [WARNING] | Stake concentration is high | Nakamoto coefficient is 18: that many validators together control over a third of active stake. | `threshold` |
-| [WARNING] | Solana TVL moved sharply (up 8.2% in 24h) | Solana TVL changed +8.2% over the last day, past the 6% alert band. | `threshold` |
-| [WARNING] | DEX volume moved sharply (up 63.7% in 24h) | DEX volume changed +63.7% over the last day, past the 40% alert band. | `threshold` |
-| [WARNING] | Chain fees moved sharply (up 55.9% in 24h) | Chain fees changed +55.9% over the last day, past the 40% alert band. | `threshold` |
-| [WARNING] | 24h chain fees is above its recent norm | Current 13,676,729.38 sits 3.2 sigma above the median of the last 60 runs (9,053,363.46, +51.1%). | `zscore` |
+| [WARNING] | Solana TVL moved sharply (up 7.9% in 24h) | Solana TVL changed +7.9% over the last day, past the 6% alert band. | `threshold` |
+| [WARNING] | 24h chain fees is above its recent norm | Current 13,758,063.85 sits 3.2 sigma above the median of the last 61 runs (9,097,906.09, +51.2%). | `zscore` |
 
 ## Network performance
 
-- **Non-vote (user) TPS:** 3,388.7 average over the last 60 minutes; 3,668.9 in the latest sample.
-- **Total TPS:** 5,033.8 average, 5,980.2 peak. Consensus votes account for 32.7% of all transactions.
-- **Slot time:** 417.0 ms average (target 400 ms), worst 1-minute bucket 441.2 ms.
-- **Block height:** 418,573,412 at absolute slot 440,523,605.
-- **Epoch 1019:** slot 315,605 of 432,000 (73.06% complete).
+- **Non-vote (user) TPS:** 2,669.7 average over the last 60 minutes; 2,745.4 in the latest sample.
+- **Total TPS:** 4,319.1 average, 5,106.7 peak. Consensus votes account for 38.2% of all transactions.
+- **Slot time:** 415.8 ms average (target 400 ms), worst 1-minute bucket 434.8 ms.
+- **Block height:** 418,627,259 at absolute slot 440,577,530.
+- **Epoch 1019:** slot 369,530 of 432,000 (85.54% complete).
 - **Client:** agave `4.2.0`, feature set `565236538`. Inflation 3.688% annualised.
 
 **Public RPC endpoint health this run**
 
 | Endpoint | Healthy | Latency |
 |---|:--:|---:|
-| `api.mainnet-beta.solana.com` | yes | 155 ms |
-| `solana-rpc.publicnode.com` | yes | 61 ms |
-| `api.mainnet.solana.com` | yes | 113 ms |
+| `api.mainnet-beta.solana.com` | yes | 492 ms |
+| `solana-rpc.publicnode.com` | yes | 212 ms |
+| `api.mainnet.solana.com` | yes | 457 ms |
 
 ## Validators & stake
 
 - **690 active** validators, **6 delinquent** (0.86% by count, 0.001% by stake).
-- **Total stake:** 435,241,268 SOL ($37.85B); stake rate 68.81% of total supply.
+- **Total stake:** 435,241,268 SOL ($38.44B); stake rate 68.81% of total supply.
 - **Concentration:** Nakamoto coefficient **18**; top 10 hold 24.38% and top 33 hold 45.86% of active stake.
 - **Commission:** median 5.0%, mean 12.27%; 256 validators at 0% and 63 at 100%.
 
@@ -78,13 +76,13 @@ Critical 0 · Serious 3 · Warning 5 · Info 0
 
 ## Economics
 
-- **SOL:** $86.96 (+6.67% 24h, +14.78% 7d, +11.94% 30d). Market cap $50.68B, 24h volume $4.90B (9.66% of cap). Price source: `coingecko`.
-- **TVL:** $5.30B across 327 protocols - rank #3 of 461 chains, 6.30% of all tracked chain TVL. +9.89% over 7d, -60.0% from its ATH.
-- **Stablecoins:** $16.33B circulating on Solana (+1.53% 7d) - $3.08 of stablecoin per dollar locked in DeFi (stablecoins are not a subset of DeFi TVL, so this ratio can exceed 1).
-- **DEX volume:** $3.01B in 24h, $12.09B over 7d across 119 venues. Volume/TVL turnover 0.568x per day.
-- **REV (chain fees):** $13.68M in 24h, $256.96M over 30d. Retained chain revenue $6.03M (44.1% of fees). Annualised fees are 9.85% of market cap.
+- **SOL:** $88.31 (+3.22% 24h, +15.86% 7d, +13.09% 30d). Market cap $51.51B, 24h volume $4.21B (8.17% of cap). Price source: `coingecko`.
+- **TVL:** $5.29B across 328 protocols - rank #3 of 461 chains, 6.29% of all tracked chain TVL. +9.58% over 7d, -60.1% from its ATH.
+- **Stablecoins:** $16.33B circulating on Solana (+1.53% 7d) - $3.09 of stablecoin per dollar locked in DeFi (stablecoins are not a subset of DeFi TVL, so this ratio can exceed 1).
+- **DEX volume:** $3.15B in 24h, $10.95B over 7d across 119 venues. Volume/TVL turnover 0.596x per day.
+- **REV (chain fees):** $13.76M in 24h, $253.21M over 30d. Retained chain revenue $5.98M (43.4% of fees). Annualised fees are 9.75% of market cap.
 - **Transaction fees:** base fee 5,000 lamports; median priority fee 0.00 micro-lamports/CU across 150 recent slots (0.0% of slots carried one). A modelled 200k-CU transaction costs 0.000005000 SOL (~$0.00).
-- **Supply:** 583,005,828 SOL circulating of 632,513,373 total (92.17%).
+- **Supply:** 583,063,315 SOL circulating of 632,513,124 total (92.18%).
 
 ## Ecosystem
 
@@ -92,38 +90,38 @@ Critical 0 · Serious 3 · Warning 5 · Info 0
 
 | # | Protocol | Category | TVL | 1d | 7d |
 |--:|---|---|--:|--:|--:|
-| 1 | Sanctum Validator LSTs | Liquid Staking | $1.30B | +7.2% | +17.2% |
-| 2 | Kamino Lend | Lending | $1.14B | +3.0% | +9.0% |
-| 3 | Jupiter Lend | Lending | $1.03B | +4.3% | +10.0% |
-| 4 | Raydium AMM | Dexs | $953.74M | +5.4% | +13.1% |
-| 5 | Binance Staked SOL | Liquid Staking | $879.24M | +6.8% | +13.2% |
-| 6 | Jito Liquid Staking | Liquid Staking | $873.90M | +7.3% | +15.6% |
-| 7 | Jupiter Perpetual Exchange | Derivatives | $743.62M | +4.5% | +7.7% |
-| 8 | BlackRock BUIDL | RWA | $740.56M | -0.1% | -0.0% |
-| 9 | Solstice | Basis Trading | $506.20M | +0.3% | +0.1% |
-| 10 | Jupiter Staked SOL | Liquid Staking | $453.75M | +7.3% | +15.8% |
-| 11 | xStocks | RWA | $404.26M | +0.7% | +7.2% |
-| 12 | Sentora | Risk Curators | $366.24M | +0.1% | -0.7% |
+| 1 | Sanctum Validator LSTs | Liquid Staking | $1.31B | +2.5% | +15.0% |
+| 2 | Kamino Lend | Lending | $1.13B | +0.5% | +7.5% |
+| 3 | Jupiter Lend | Lending | $975.10M | -0.8% | +5.3% |
+| 4 | Raydium AMM | Dexs | $965.69M | +6.3% | +13.6% |
+| 5 | Binance Staked SOL | Liquid Staking | $884.49M | +2.5% | +13.2% |
+| 6 | Jito Liquid Staking | Liquid Staking | $876.31M | +2.5% | +15.2% |
+| 7 | BlackRock BUIDL | RWA | $740.67M | +0.0% | -0.0% |
+| 8 | Jupiter Perpetual Exchange | Derivatives | $721.35M | -1.4% | +4.6% |
+| 9 | Solstice | Basis Trading | $506.24M | +0.0% | +0.1% |
+| 10 | Jupiter Staked SOL | Liquid Staking | $454.58M | +2.5% | +15.0% |
+| 11 | xStocks | RWA | $407.75M | +0.8% | +6.3% |
+| 12 | Sentora | Risk Curators | $365.19M | -0.3% | -0.9% |
 
-The top five protocols hold 36.1% of Solana's tracked TVL. Summed across all 327 protocols the total is $14.70B. The per-protocol sum runs higher than the headline chain TVL because DeFiLlama strips double-counted value (liquid-staking tokens redeposited as lending collateral, and similar) from chain totals but reports it in each protocol's own figure. Both numbers are correct; they answer different questions.
+The top five protocols hold 35.9% of Solana's tracked TVL. Summed across all 328 protocols the total is $14.66B. The per-protocol sum runs higher than the headline chain TVL because DeFiLlama strips double-counted value (liquid-staking tokens redeposited as lending collateral, and similar) from chain totals but reports it in each protocol's own figure. Both numbers are correct; they answer different questions.
 
-**TVL by category:** Liquid Staking 34.2% · Lending 16.5% · Dexs 13.8% · RWA 12.9% · Derivatives 5.7% · Basis Trading 4.0%
+**TVL by category:** Liquid Staking 34.4% · Lending 16.1% · Dexs 13.9% · RWA 13.0% · Derivatives 5.6% · Basis Trading 4.0%
 
 ### Tokenised assets
 
-$2.48B of tokenised real-world assets and equities are locked on Solana - 16.901% of chain TVL.
+$2.49B of tokenised real-world assets and equities are locked on Solana - 16.978% of chain TVL.
 
-- BlackRock BUIDL (RWA): $740.56M
-- Solstice (Basis Trading): $506.20M
-- xStocks (RWA): $404.26M
-- OnRe (RWA): $272.32M
-- Ondo Yield Assets (RWA): $178.33M
+- BlackRock BUIDL (RWA): $740.67M
+- Solstice (Basis Trading): $506.24M
+- xStocks (RWA): $407.75M
+- OnRe (RWA): $272.68M
+- Ondo Yield Assets (RWA): $178.53M
 
 *Tokenised real-world assets and equities on Solana, summed from DeFiLlama categories Basis Trading, RWA, RWA Lending, Tokenized Equities, Treasury Bonds. This is locked value, not traded volume - keyless per-venue equity volume is not published.*
 
 ### Address activity (proxy)
 
-Across 3 sampled blocks, an average of **1,106.0 unique fee payers** signed per block (1,675 distinct addresses in the union, 49.5% overlap between blocks).
+Across 3 sampled blocks, an average of **993.0 unique fee payers** signed per block (1,392 distinct addresses in the union, 53.3% overlap between blocks).
 
 *Proxy metric. Unique fee payers observed in sampled blocks; the overlap figure shows how much address reuse there is between blocks. Not a daily-unique-address count - that needs an indexer.*
 
@@ -149,14 +147,14 @@ Across 3 sampled blocks, an average of **1,106.0 unique fee payers** signed per 
 
 ### Open SIMD proposals (live from the SIMD repository)
 
+- [SIMD-0504: simd-0504: remove identical signature requirement](https://github.com/solana-foundation/solana-improvement-documents/pull/593) - updated 2026-08-20
+- [SIMD-0571: SIMD-0571: Soft Deprecation of Durable Nonce Transactions](https://github.com/solana-foundation/solana-improvement-documents/pull/571) - updated 2026-08-20
 - [SIMD-0602: SIMD-0602: Disallow Nonce Account as Program ID](https://github.com/solana-foundation/solana-improvement-documents/pull/602) - updated 2026-08-20
 - [SIMD-0298: Correct bank hash components in SIMD-0298](https://github.com/solana-foundation/solana-improvement-documents/pull/604) - updated 2026-08-20
-- [SIMD-0571: SIMD-0571: Soft Deprecation of Durable Nonce Transactions](https://github.com/solana-foundation/solana-improvement-documents/pull/571) - updated 2026-08-19
 - [Remove inactive stakes from the stakes cache](https://github.com/solana-foundation/solana-improvement-documents/pull/599) - updated 2026-08-19
 - [Increase TxV1 Account Lock Limit to 96](https://github.com/solana-foundation/solana-improvement-documents/pull/596) - updated 2026-08-17
 - [SIMD-0553: simd-0553 amendment: adjust inclusion fee](https://github.com/solana-foundation/solana-improvement-documents/pull/600) - updated 2026-08-14
 - [SIMD-0582: SIMD-0582: Early detection of instruction trace overflow](https://github.com/solana-foundation/solana-improvement-documents/pull/582) - updated 2026-08-14
-- [Amend 0529](https://github.com/solana-foundation/solana-improvement-documents/pull/585) - updated 2026-08-07
 
 ### Tracked milestones (curated list, last reviewed 2026-08-06)
 
@@ -171,35 +169,35 @@ Across 3 sampled blocks, an average of **1,106.0 unique fee payers** signed per 
 
 ## Trend
 
-### Change over 24h (vs run at 2026-08-19T18:15:30Z)
+### Change over 24h (vs run at 2026-08-20T00:30:35Z)
 
 | Metric | Then | Now | Change |
 |---|--:|--:|--:|
-| Average TPS | 5,093.61 | 5,033.78 | -1.17% |
-| Average non-vote TPS | 3,460.99 | 3,388.67 | -2.09% |
-| Average slot time (ms) | 416.70 | 417.00 | +0.07% |
-| Active validators | 686.00 | 690.00 | +0.58% |
-| Delinquent validators | 9.00 | 6.00 | -33.33% |
-| Solana TVL | 5,060,698,995.00 | 5,300,056,423.00 | +4.73% |
-| SOL price | 81.32 | 86.96 | +6.94% |
-| Stablecoin supply | 16,009,704,067.00 | 16,325,927,693.00 | +1.98% |
-| 24h DEX volume | 1,838,194,723.04 | 3,009,837,694.95 | +63.74% |
-| 24h chain fees | 8,772,755.23 | 13,676,729.38 | +55.90% |
+| Average TPS | 4,289.29 | 4,319.13 | +0.70% |
+| Average non-vote TPS | 2,638.50 | 2,669.71 | +1.18% |
+| Average slot time (ms) | 414.40 | 415.80 | +0.34% |
+| Active validators | 688.00 | 690.00 | +0.29% |
+| Delinquent validators | 8.00 | 6.00 | -25.00% |
+| Solana TVL | 5,190,256,197.00 | 5,285,370,682.00 | +1.83% |
+| SOL price | 85.66 | 88.31 | +3.09% |
+| Stablecoin supply | 16,010,344,860.00 | 16,326,513,472.00 | +1.97% |
+| 24h DEX volume | 2,189,292,543.00 | 3,150,837,936.95 | +43.92% |
+| 24h chain fees | 9,650,957.28 | 13,758,063.85 | +42.56% |
 
-### Change over 7d (vs run at 2026-08-13T18:44:18Z)
+### Change over 7d (vs run at 2026-08-14T00:54:30Z)
 
 | Metric | Then | Now | Change |
 |---|--:|--:|--:|
-| Average TPS | 4,039.13 | 5,033.78 | +24.63% |
-| Average non-vote TPS | 2,403.37 | 3,388.67 | +41.00% |
-| Average slot time (ms) | 416.90 | 417.00 | +0.02% |
+| Average TPS | 3,556.79 | 4,319.13 | +21.43% |
+| Average non-vote TPS | 1,918.34 | 2,669.71 | +39.17% |
+| Average slot time (ms) | 416.50 | 415.80 | -0.17% |
 | Active validators | 688.00 | 690.00 | +0.29% |
 | Delinquent validators | 9.00 | 6.00 | -33.33% |
-| Solana TVL | 4,832,030,854.00 | 5,300,056,423.00 | +9.69% |
-| SOL price | 75.68 | 86.96 | +14.90% |
-| Stablecoin supply | 16,079,315,270.00 | 16,325,927,693.00 | +1.53% |
-| 24h DEX volume | 1,725,631,800.93 | 3,009,837,694.95 | +74.42% |
-| 24h chain fees | 9,673,605.00 | 13,676,729.38 | +41.38% |
+| Solana TVL | 4,848,077,810.00 | 5,285,370,682.00 | +9.02% |
+| SOL price | 76.02 | 88.31 | +16.17% |
+| Stablecoin supply | 16,080,626,456.00 | 16,326,513,472.00 | +1.53% |
+| 24h DEX volume | 1,981,814,466.75 | 3,150,837,936.95 | +58.99% |
+| 24h chain fees | 9,107,820.55 | 13,758,063.85 | +51.06% |
 
 ## Data sources
 
@@ -215,7 +213,7 @@ Across 3 sampled blocks, an average of **1,106.0 unique fee payers** signed per 
 | GitHub API (anza-xyz/agave) | validator client releases | no |
 | GitHub API (solana-improvement-documents) | open SIMD proposals | no |
 
-This run made 35 HTTP calls (35 succeeded, 0 failed) in 16.0s of wall time.
+This run made 35 HTTP calls (35 succeeded, 0 failed) in 27.1s of wall time.
 
 ---
 
